@@ -19,7 +19,7 @@ typedef struct {
 Aluno alunos[MAX_ALUNOS];
 int totalAlunos = 0;
 
-// vari·veis globais para definir logins e senhas
+// vari√°veis globais para definir logins e senhas
 char logins[3][20] = {"assistente", "professor", "aluno"};
 char senhas[3][20] = {"assistente", "professor", "aluno"};
 
@@ -35,13 +35,13 @@ void nota();
 
 int main() {
     setlocale(LC_ALL, "Portuguese"); // Definir idioma
-    telaLogin(); // Chamar a funÁ„o da tela de login
+    telaLogin(); // Chamar a fun√ß√£o da tela de login
     return 0;
 }
 
 int gerarNumeroMatricula() {
     srand(time(NULL));
-    return rand() % 900000 + 100000; // Gera um n˙mero de matrÌcula entre 100000 e 999999
+    return rand() % 900000 + 100000; // Gera um n√∫mero de matr√≠cula entre 100000 e 999999
 }
 
 void getPassword(char *password, int length) {
@@ -65,13 +65,13 @@ void getPassword(char *password, int length) {
 
 void telaLogin() {
     char login[20], senha[20], opcao;
-    int i, login_sucesso = 0; // vari·vel para indicar se o login foi bem-sucedido
+    int i, login_sucesso = 0; // vari√°vel para indicar se o login foi bem-sucedido
 
     while (1) {
         system("cls");
         printf("\t\t\t\t\t |============= LOGIN =============|\n");
         printf("\t\t\t\t\t |Digite o login: ");
-        scanf("%s", login); // Recebe o que o usu·rio digitou no login
+        scanf("%s", login); // Recebe o que o usu√°rio digitou no login
         getchar(); // Consome o '\n'
         printf("\t\t\t\t\t |Digite a senha: ");
         getPassword(senha, sizeof(senha));
@@ -112,14 +112,14 @@ void telaLogin() {
             }
             menuProfessor();
             break;
-        } else { // Caso n„o dÍ certo nenhum teste
+        } else { // Caso n√£o d√™ certo nenhum teste
             system("cls");
             printf("\t\t\t\t\t Login falhou\n");
             printf("\n\t\t\t\t\t Deseja tentar novamente?");
             printf("\n\t\t\t\t\t (S)Sim");
-            printf("\n\t\t\t\t\t (N)N„o");
+            printf("\n\t\t\t\t\t (N)N√£o");
             printf("\n\t\t\t\t\t Selecione: ");
-            scanf("%c", &opcao); // Recebe o que o usu·rio escolheu
+            scanf("%c", &opcao); // Recebe o que o usu√°rio escolheu
             getchar(); // Consome o '\n' restante no buffer
             if (opcao == 's' || opcao == 'S') {
                 printf("\n\t\t\t   ============ Carregando a tela de login em 5 segundos ============\n");
@@ -151,12 +151,12 @@ void obterDadosAluno(char *nome, char *cpf, char *data_nascimento, int *matricul
 void menuAdmin() {
     char opcao;
     system("cls"); // Limpa a tela
-    // OpÁıes que o usu·rio tem abaixo
+    // Op√ß√µes que o usu√°rio tem abaixo
     printf("MENU DO ASSISTENTE:\n");
     printf("\n1. Matricular Aluno");
     printf("\n2. Fechar Sistema");
-    printf("\n\nOpÁ„o escolhida: ");
-    scanf("%c", &opcao); // LÍ o que o usu·rio inseriu
+    printf("\n\nOp√ß√£o escolhida: ");
+    scanf("%c", &opcao); // L√™ o que o usu√°rio inseriu
     getchar(); // Consome o '\n' restante no buffer
     system("cls"); // Limpa a tela
     switch (opcao) {
@@ -168,7 +168,7 @@ void menuAdmin() {
             Sleep(5000);
             telaLogin();
             break;
-        default: // Caso o usu·rio n„o escolha nenhuma das opÁıes acima, ele chama o menu de novo
+        default: // Caso o usu√°rio n√£o escolha nenhuma das op√ß√µes acima, ele chama o menu de novo
             menuAdmin();
             break;
     }
@@ -177,11 +177,11 @@ void menuAdmin() {
 void matricula() {
     char opcao;
     system("cls");
-    printf("MENU DE MATRÕCULA:\n\n");
-    printf("1- Matricular TÈcnico\n");
-    printf("2- Matricular GraduaÁ„o\n");
+    printf("MENU DE MATR√çCULA:\n\n");
+    printf("1- Matricular T√©cnico\n");
+    printf("2- Matricular Gradua√ß√£o\n");
     printf("3- Encerrar Sistema\n");
-    printf("\nOpÁ„o escolhida: ");
+    printf("\nOp√ß√£o escolhida: ");
     scanf("%c", &opcao);
     system("cls");
     switch (opcao) {
@@ -194,7 +194,7 @@ void matricula() {
             Sleep(5000);
             telaLogin();
             break;
-        default: // Caso o usu·rio n„o escolha nenhuma das opÁıes acima, ele chama o menu de novo
+        default: // Caso o usu√°rio n√£o escolha nenhuma das op√ß√µes acima, ele chama o menu de novo
             matricula();
             break;
     }
@@ -203,12 +203,12 @@ void matricula() {
 void menuAluno() {
     char opcao;
     system("cls"); // Limpa a tela
-    // OpÁıes que o usu·rio tem abaixo
+    // Op√ß√µes que o usu√°rio tem abaixo
     printf("MENU DO ALUNO:\n");
     printf("\n1. Consultar Boletim");
     printf("\n2. Fechar Sistema");
-    printf("\n\nOpÁ„o escolhida: ");
-    scanf("%c", &opcao); // LÍ o que o usu·rio inseriu
+    printf("\n\nOp√ß√£o escolhida: ");
+    scanf("%c", &opcao); // L√™ o que o usu√°rio inseriu
     getchar(); // Consome o '\n' restante no buffer
     system("cls"); // Limpa a tela
     switch (opcao) {
@@ -220,7 +220,7 @@ void menuAluno() {
             Sleep(5000);
             telaLogin();
             break;
-        default: // Caso o usu·rio n„o escolha nenhuma das opÁıes acima, ele chama o menu de novo
+        default: // Caso o usu√°rio n√£o escolha nenhuma das op√ß√µes acima, ele chama o menu de novo
             menuAluno();
             break;
     }
@@ -229,13 +229,13 @@ void menuAluno() {
 void menuProfessor() {
     char opcao;
     system("cls"); // Limpa a tela
-    // OpÁıes que o usu·rio tem abaixo
+    // Op√ß√µes que o usu√°rio tem abaixo
     printf("MENU DO PROFESSOR:\n");
     printf("\n1. Consultar Boletim");
-    printf("\n2. LanÁar Nota");
+    printf("\n2. Lan√ßar Nota");
     printf("\n3. Encerrar sistema");
-    printf("\n\nOpÁ„o escolhida: ");
-    scanf("%c", &opcao); // LÍ o que o usu·rio inseriu
+    printf("\n\nOp√ß√£o escolhida: ");
+    scanf("%c", &opcao); // L√™ o que o usu√°rio inseriu
     getchar(); // Consome o '\n' restante no buffer
     system("cls"); // Limpa a tela
     switch (opcao) {
@@ -250,7 +250,7 @@ void menuProfessor() {
             Sleep(5000);
             telaLogin();
             break;
-        default: // Caso o usu·rio n„o escolha nenhuma das opÁıes acima, ele chama o menu de novo
+        default: // Caso o usu√°rio n√£o escolha nenhuma das op√ß√µes acima, ele chama o menu de novo
             menuProfessor();
             break;
     }
@@ -264,7 +264,7 @@ void matricularAluno() {
     }
     
     system("cls");
-    printf("MatrÌcula de Novo Aluno\n");
+    printf("Matr√≠cula de Novo Aluno\n");
     obterDadosAluno(alunos[totalAlunos].nome, alunos[totalAlunos].cpf, alunos[totalAlunos].data_nascimento, &alunos[totalAlunos].matricula);
     
     // Inicializa notas com zero
@@ -273,7 +273,7 @@ void matricularAluno() {
     }
     
     printf("\nAluno matriculado com sucesso!\n");
-    printf("Nome: %s\nCPF: %s\nData de Nascimento: %s\nN˙mero de MatrÌcula: %d\n", 
+    printf("Nome: %s\nCPF: %s\nData de Nascimento: %s\nN√∫mero de Matr√≠cula: %d\n", 
             alunos[totalAlunos].nome, alunos[totalAlunos].cpf, alunos[totalAlunos].data_nascimento, alunos[totalAlunos].matricula);
     totalAlunos++;
     Sleep(3000);
@@ -285,7 +285,7 @@ void boletim() {
 	int j;
     int matricula;
     system("cls");
-    printf("Digite o n˙mero de matrÌcula: ");
+    printf("Digite o n√∫mero de matr√≠cula: ");
     scanf("%d", &matricula);
     
     for ( i = 0; i < totalAlunos; i++) {
@@ -299,7 +299,7 @@ void boletim() {
             return;
         }
     }
-    printf("\nAluno n„o encontrado!\n");
+    printf("\nAluno n√£o encontrado!\n");
     Sleep(3000);
     menuAluno();
 }
@@ -308,24 +308,24 @@ void nota() {
     int matricula, i, j;
     float novaNota;
     system("cls");
-    printf("Digite o n˙mero de matrÌcula do aluno: ");
+    printf("Digite o n√∫mero de matr√≠cula do aluno: ");
     scanf("%d", &matricula);
     
     for (i = 0; i < totalAlunos; i++) {
         if (alunos[i].matricula == matricula) {
-            printf("\nLanÁando nota para o aluno %s:\n", alunos[i].nome);
+            printf("\nLan√ßando nota para o aluno %s:\n", alunos[i].nome);
             for (j = 0; j < 3; j++) {
                 printf("Digite a nota %d: ", j + 1);
                 scanf("%f", &novaNota);
                 alunos[i].notas[j] = novaNota;
             }
-            printf("Notas lanÁadas com sucesso!\n");
+            printf("Notas lan√ßadas com sucesso!\n");
             Sleep(3000);
             menuProfessor();
             return;
         }
     }
-    printf("\nAluno n„o encontrado!\n");
+    printf("\nAluno n√£o encontrado!\n");
     Sleep(3000);
     menuProfessor();
 }
